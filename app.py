@@ -3,6 +3,7 @@ import pandas as pd
 import numpy as np
 import pickle
 from sklearn.tree import DecisionTreeClassifier
+import random
 
 # Load the saved model
 model = pickle.load(open('final_model.pkl', 'rb'))
@@ -59,5 +60,5 @@ with st.form("my_form"):
 
 # Make predictions and display results
 if submitted:
-    clust = loaded_model.predict(data)[0]
+    clust = model.predict(data)[0]  # Use 'model' here, not 'loaded_model'
     st.write(f'Data belongs to Cluster: {clust} - {cluster_mapping[clust]}')
