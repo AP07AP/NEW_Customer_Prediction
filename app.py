@@ -5,7 +5,7 @@ import pickle
 from sklearn.tree import DecisionTreeClassifier
 
 # Load the saved model
-model = pickle.load(open('final_model.sav', 'rb'))
+model = pickle.load(open('final_model.pkl', 'rb'))
 
 # Streamlit user input
 st.title("Customer Prediction")
